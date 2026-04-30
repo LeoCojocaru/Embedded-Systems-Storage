@@ -10,7 +10,7 @@
 
 void setup() {
   ctrl_stdio_init();
-  ctrl_led_init();
+  ctrl_led_init(); // jhvbgyvgcifcftcftrctfcigvgtvygvyg
   printf("System este init!\n");
 }
 
