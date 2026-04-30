@@ -1,18 +1,22 @@
 #include <Arduino.h>
+#include "ctrl_stdio.h"
+#include "ctrl_led.h"
 
-// put function declarations here:
-int myFunction(int, int);
+
+#define LED_PIN 12
+#define BUTTON_PIN 10
+#define BUFF_LENGHT 100
+
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  ctrl_stdio_init();
+  ctrl_led_init();
+  printf("System este init!\n");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  char str[BUFF_LENGHT] = {0};
+  printf("Enter command (led_on / led_off / led_toggle): ");
+  scanf("%s", str);
+  ctrl_led_update(str);
 }
